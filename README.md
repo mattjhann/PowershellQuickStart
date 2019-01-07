@@ -1,11 +1,15 @@
 Quick Start for PowerShell
+
 Powershell is a shell scripting language created by Microsoft that was originally meant for server administration and as a competitor to Linux's Bourne Again SHell (BASH). Since then it has become a basic front-end for the .NET framework, WMI, and COM (the bits and pieces of windows) and the community has expanded it to include many new features. These features are released in what are called Modules - groups of commands called cmdlets all centered around one purpose. For example Active Directory has a Module, to use the cmdlets that are relevant to it you must first load the Active Directory Module.
 
 It is also worth noting that most things in powershell are case-insensitive.
 
 When running a script powershell will execute top-to-bottom unless flow controls (if, for, while) tell it to do something different.
+
 Syntax
+
 COMMANDS
+
 Powershell follows what is called a verb-noun format for all its commands. The command tells powershell broadly what you would like to do.
 
 	Get-Process
@@ -18,7 +22,9 @@ From there you have parameters. These further specify how you want the thing don
 	Get-ADUser -Identity "username"
 
 In the space after a parameter you put the argument, this is user input that further specifies what to do. In the above example it's the "username".
+
 VARIABLES
+
 Variables are ways to hold data. In Powershell they adapt to what's inside them which means the type is automatically determined - this isn't important generally, but it is sometimes important to know. Variables are always referenced with a dollar sign and assigned with the = sign:
 	$variable
 	$variable = "this"
@@ -36,8 +42,10 @@ To select a particular part of an array you index with square brackets. You can 
 	$group[-1] #The last value
 	$group[2..4] #The third to the fifth value
 
-The hash character makes everything after it a comment and powershell ignores it.  
+The hash character makes everything after it a comment and powershell ignores it.
+
 THE PIPELINE
+
 Some commands give an output. There are a couple of things you can do with this:
 
 1.Send it to the console (this is the default): Get-Process
@@ -59,7 +67,9 @@ Isn't like: -notlike
 etc. (you can look these up online)
 
 Using the pipeline efficiently is one of the challenges of powershell and can create some pretty powerful "One-Liners". While it's a nice challenge and sometimes a good exercise to see how much you can do in one line, your scripts for production should probably split the steps into variables to allow for easier debugging.
+
 ifs and loops
+
 IF STATEMENTS
 
 Flow controls in the form of ifs and loops are incredibly useful tools and are required for most things. They are written with the condition in normal brackets and the thing you want it to do in curly brackets:
